@@ -1,0 +1,58 @@
+<%= form_for(blog_post) do |f| %>
+  <% if blog_post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(blog_post.errors.count, "error") %> prohibited this blog_post from being saved:</h2>
+
+      <ul>
+      <% blog_post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control"%>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :author %>
+    <%= f.text_field :author, class: "form-control"%>
+
+  </div>
+
+
+
+  <div class="field">
+    <%= f.label :blog_entry %>
+    <%= f.text_area :blog_entry, class: "form-control"%>
+  </div>  
+
+
+
+  <div class="field">
+    <%= f.label :category %>
+    <%= f.text_field :category, class: "form-control"%>
+  </div>
+
+
+  
+    <div class="field">
+    <%= f.label :user_id %>
+    <%= f.text_area :user_id,  class: "form-control"%>
+  </div>
+
+
+
+  <div class="actions">
+  <button type="submit" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="Press it!">Submit</button>
+
+</form>
+
+
+
+<% end %>
